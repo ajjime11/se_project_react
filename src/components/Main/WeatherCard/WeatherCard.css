@@ -15,6 +15,7 @@
 }
 
 .weather-card__temp {
+  font-family: "Cabinet Grotesk Bold", sans-serif;
   position: absolute;
   bottom: 20px;
   left: 16px;

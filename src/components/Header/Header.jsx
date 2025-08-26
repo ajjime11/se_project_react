@@ -14,10 +14,10 @@ const Header = () => {
     <header className="header">
       <img src={logo} alt="" className="header__logo" />
       <p className="header__place">
-        New York,{" "}
         <time className="header__datetime" dateTime={now}>
           {dateStr},
-        </time>
+        </time>{" "}
+        New York
       </p>
       <div className="header__info-group">
         <button className="header__add-clothes-btn">+ Add clothes</button>
