@@ -6,14 +6,19 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import WeatherCard from "../Main/WeatherCard/WeatherCard";
+import { defaultClothingItems } from "../../utils/defaultClothingItems";
+
+// TODO - apply all styles from the Figma to all the components
+// TODO - set up the fonts
+// TODO - implement footer
+// TODO - modals
 
 function App() {
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   return (
     <div className="app">
       <Header />
-      <WeatherCard />
-      <Main />
+      <Main clothingItems={clothingItems} />
       <Footer />
     </div>
   );
