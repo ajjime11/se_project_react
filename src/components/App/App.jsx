@@ -1,13 +1,7 @@
-// TODO - apply all styles from the Figma to all the components
-// TODO - set up the fonts
-// TODO - implement footer
-// TODO - modals
-
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { useState } from "react";
-import "../../index.css";
 import "./App.css";
+import "../ItemModal/ItemModal.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -16,7 +10,6 @@ import { defaultClothingItems } from "../../utils/defaultClothingItems";
 
 function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-
   const [activeModal, setActiveModal] = useState("");
 
   const handleOpenModal = () => {
@@ -27,9 +20,6 @@ function App() {
     setActiveModal("");
   };
 
-  // App.jsx
-  // ... (imports and state are the same)
-
   return (
     <div className="app">
       <Header onAddClick={handleOpenModal} />
@@ -39,19 +29,47 @@ function App() {
         name="add-garment"
         isOpen={activeModal === "add-garment"}
         onClose={handleCloseModal}
+        title="New garment"
+        buttonText="Add garment"
       >
-        <label>Name</label>
-        <input type="text" placeholder="Name" />
-        <label>Image URL</label>
-        <input type="url" placeholder="Image URL" />
-        <fieldset>
-          <legend>Select the weather type:</legend>
-          <input type="radio" id="hot" name="weather" value="hot" />
-          <label htmlFor="hot">Hot</label>
-          <input type="radio" id="warm" name="weather" value="warm" />
-          <label htmlFor="warm">Warm</label>
-          <input type="radio" id="cold" name="weather" value="cold" />
-          <label htmlFor="cold">Cold</label>
+        <label className="modal__label">Name</label>
+        <input type="text" placeholder="Name" className="modal__input" />
+        <label className="modal__label">Image URL</label>
+        <input type="url" placeholder="Image URL" className="modal__input" />
+        <fieldset className="modal__fieldset">
+          <legend className="modal__legend">Select the weather type:</legend>
+          <div className="modal__radio-group">
+            <input
+              className="modal__radio-input"
+              type="radio"
+              id="hot"
+              name="weather"
+              value="hot"
+            />
+            <label className="modal__label" htmlFor="hot">
+              Hot
+            </label>
+            <input
+              className="modal__radio-input"
+              type="radio"
+              id="warm"
+              name="weather"
+              value="warm"
+            />
+            <label className="modal__label" htmlFor="warm">
+              Warm
+            </label>
+            <input
+              className="modal__radio-input"
+              type="radio"
+              id="cold"
+              name="weather"
+              value="cold"
+            />
+            <label className="modal__label" htmlFor="cold">
+              Cold
+            </label>
+          </div>
         </fieldset>
       </ModalWithForm>
     </div>

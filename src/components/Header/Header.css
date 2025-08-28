@@ -20,18 +20,23 @@
 }
 
 .header__place {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
+  font-family: "Cabinet Grotesk Bold", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  margin: 0;
 }
 
 .header__add-clothes-btn {
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
   padding: 8px 16px;
   border-radius: 20px;
-  border: 1px solid #dcdcdc;
   background-color: transparent;
   cursor: pointer;
+  border: none;
 }
 
 .header__info-group {
@@ -42,7 +47,8 @@
 }
 
 .header__username {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
   margin-right: 12px;
 }
