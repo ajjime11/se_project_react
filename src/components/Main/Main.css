@@ -1,10 +1,9 @@
-.main__card-list {
-  display: flex;
-  flex-wrap: wrap;
+.main__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
   gap: 20px;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+  justify-items: center;
+  margin-top: 34px;
 }
 
 .main__text {
@@ -12,6 +11,5 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  margin-bottom: 24px;
-  margin-top: 24px;
+  margin-top: 40px;
 }

@@ -1,12 +1,21 @@
 import React from "react";
 import "./ItemCard.css";
 
-const ItemCard = ({ data }) => {
+const ItemCard = ({ item, onCardClick }) => {
+  const handleClick = () => {
+    onCardClick(item);
+  };
+
   return (
-    <li className="card">
-      <h2 className="card__title">{data.name}</h2>
-      <img src={data.link} alt={data.name} className="card__image" />
-    </li>
+    <div className="card">
+      <div className="card__title">{item.name}</div>
+      <img
+        src={item.link}
+        alt={item.name}
+        className="card__image"
+        onClick={handleClick}
+      />
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import cloudy from "../../../assets/cloudy.png";
+import cloudy from "../../../assets/cloudy-day.png";
 import "./WeatherCard.css";
 
 const WeatherCard = () => {
