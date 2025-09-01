@@ -1,7 +1,7 @@
 import React from "react";
 import "./ItemCard.css";
 
-const ItemCard = ({ key, data }) => {
+const ItemCard = ({ data }) => {
   return (
     <li className="card">
       <h2 className="card__title">{data.name}</h2>

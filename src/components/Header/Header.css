@@ -2,9 +2,7 @@
   font-family: "Cabinet Grotesk Bold", sans-serif;
   display: flex;
   align-items: center;
-  padding: 10px 40px;
   border-bottom: 1px solid #e5e5e5;
-  font-family: "Helvetica", sans-serif;
 }
 
 .header__logo {
