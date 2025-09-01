@@ -1,13 +1,15 @@
 import React from "react";
-import cloudy from "../../../assets/cloudy-day.png";
 import "./WeatherCard.css";
 
-const WeatherCard = () => {
+const WeatherCard = ({ weather }) => {
+  if (!weather || typeof weather.temperature === "undefined") {
+    return null;
+  }
+  const temperature = weather.temperature;
   return (
-    <section className="weather-card">
-      <img src={cloudy} alt="Cloudy weather" className="weather-card__image" />
-      <p className="weather-card__temp">75&deg; F</p>
-    </section>
+    <div className="weather-card">
+      <p className="weather-card__temperature">{temperature}°F</p>
+    </div>
   );
 };
 

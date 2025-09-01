@@ -1,26 +1,26 @@
-/* TODO - spacing between Header and WeatherCard */
-
 .weather-card {
-  position: relative;
-  height: 80px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.weather-card__image {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right top;
+  max-width: 1360px;
+  height: 80px;
+  background-image: url("../../assets/cloud.png"), url("../../assets/sun.png");
+  background-repeat: no-repeat;
+  background-position: left 20px bottom 20px, right 20px top 20px;
+  background-color: #55b7ff;
+  border-radius: 16px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.weather-card__temp {
-  font-family: "Cabinet Grotesk Bold", sans-serif;
+.weather-card__temperature {
   position: absolute;
-  bottom: 20px;
-  left: 16px;
-  font-size: 36px;
-  color: white;
-  line-height: 1.1;
+  top: 20px;
+  left: 20px;
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
   margin: 0;
 }

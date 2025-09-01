@@ -3,7 +3,7 @@ import logo from "../../assets/wtwr.png";
 import avatar from "../../assets/avatar.png";
 import "./Header.css";
 
-const Header = ({ onAddClick }) => {
+const Header = ({ onAddClick, city }) => {
   const now = new Date();
   const dateStr = now.toLocaleDateString("default", {
     month: "long",
@@ -17,7 +17,7 @@ const Header = ({ onAddClick }) => {
         <time className="header__datetime" dateTime={now}>
           {dateStr},
         </time>{" "}
-        New York
+        {city}
       </p>
       <div className="header__info-group">
         <button onClick={onAddClick} className="header__add-clothes-btn">
