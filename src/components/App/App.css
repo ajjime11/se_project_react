@@ -27,7 +27,7 @@
   line-height: 20px;
 }
 
-.modal__input {
+.modal__input_text {
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -71,4 +71,10 @@
 
 .header__add-button:hover {
   opacity: 0.6;
+}
+
+.modal__radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

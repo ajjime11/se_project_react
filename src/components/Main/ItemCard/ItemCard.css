@@ -9,6 +9,8 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  transition: filter 0.3s ease;
+  cursor: pointer;
 }
 
 .card__title {
@@ -32,4 +34,8 @@
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+}
+
+.card:hover {
+  filter: brightness(1.2);
 }

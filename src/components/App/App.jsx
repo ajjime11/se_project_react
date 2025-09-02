@@ -68,11 +68,15 @@ function App() {
       >
         <div className="modal__form-field">
           <label className="modal__label">Name</label>
-          <input type="text" placeholder="Name" className="modal__input" />
+          <input type="text" placeholder="Name" className="modal__input_text" />
         </div>
         <div className="modal__form-field">
           <label className="modal__label">Image URL</label>
-          <input type="url" placeholder="Image URL" className="modal__input" />
+          <input
+            type="url"
+            placeholder="Image URL"
+            className="modal__input_text"
+          />
         </div>
         <fieldset className="modal__fieldset">
           <legend className="modal__legend">Select the weather type:</legend>

@@ -4,9 +4,8 @@
   width: 100%;
   max-width: 1360px;
   height: 80px;
-  background-image: url("../../assets/cloud.png"), url("../../assets/sun.png");
+  background-image: url("../../../assets/sunny-day.png");
   background-repeat: no-repeat;
-  background-position: left 20px bottom 20px, right 20px top 20px;
   background-color: #55b7ff;
   border-radius: 16px;
   padding: 20px 20px;
