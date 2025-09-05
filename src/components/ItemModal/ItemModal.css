@@ -1,6 +1,7 @@
 .modal {
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 700;
+  font-family: "Cabinet Grotesk Medium", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   align-items: center;
   justify-content: center;
   position: fixed;
