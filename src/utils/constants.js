@@ -10,6 +10,8 @@ import snowyDay from "../assets/snowy-day.png";
 import snowyNight from "../assets/snowy-night.png";
 import foggyDay from "../assets/foggy-day.png";
 import foggyNight from "../assets/foggy-night.png";
+import day from "../assets/day.png";
+import night from "../assets/night.png";
 
 export const weatherConditions = [
   { type: "Clear", isDay: true, image: sunnyDay },
@@ -25,6 +27,11 @@ export const weatherConditions = [
   { type: "Mist", isDay: true, image: foggyDay },
   { type: "Mist", isDay: false, image: foggyNight },
 ];
+
+export const defaultImages = {
+  day: day,
+  night: night,
+};
 
 export const coordinates = { lat: "33.408126", lon: "-111.901119" };
 export const apiKey = "733305064d06bb31f51d2aeef607f3ae";

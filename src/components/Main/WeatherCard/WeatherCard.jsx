@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./WeatherCard.css";
 import { CurrentTemperatureUnitContext } from "../../../contexts/CurrentTemperatureUnitContext";
-import { weatherConditions } from "../../../utils/constants";
+import { weatherConditions, defaultImages } from "../../../utils/constants";
 
 const WeatherCard = ({ weather }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
@@ -23,8 +23,14 @@ const WeatherCard = ({ weather }) => {
     (condition) => condition.type === weatherType && condition.isDay === isDay
   );
 
+  const selectedImageUrl = selectedImage
+    ? selectedImage.image
+    : isDay
+    ? defaultImages.day
+    : defaultImages.night;
+
   const cardStyle = {
-    backgroundImage: `url(${selectedImage.image})`,
+    backgroundImage: `url(${selectedImageUrl})`,
   };
 
   const temperature = weather.temperature[currentTemperatureUnit];
