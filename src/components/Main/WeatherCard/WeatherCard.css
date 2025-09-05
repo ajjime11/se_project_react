@@ -12,6 +12,8 @@
   box-sizing: border-box;
   margin-bottom: 20px;
   position: relative;
+  background-position: right center;
+  background-size: cover;
 }
 
 .weather-card__temperature {

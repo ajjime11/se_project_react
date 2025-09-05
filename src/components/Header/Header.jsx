@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../assets/wtwr.png";
 import avatar from "../../assets/avatar.png";
 import "./Header.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 const Header = ({ onAddClick, city }) => {
+  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
+    CurrentTemperatureUnitContext
+  );
   const now = new Date();
   const dateStr = now.toLocaleDateString("default", {
     month: "long",
@@ -23,7 +27,7 @@ const Header = ({ onAddClick, city }) => {
         </p>
       </div>
       <div className="header__side">
-        <ToggleSwitch />
+        <ToggleSwitch onToggle={handleToggleSwitchChange} />
         <div className="header__info-group">
           <button onClick={onAddClick} className="header__add-clothes-btn">
             + Add clothes

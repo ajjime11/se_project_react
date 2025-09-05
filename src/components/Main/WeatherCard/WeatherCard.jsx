@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./WeatherCard.css";
+import { CurrentTemperatureUnitContext } from "../../../contexts/CurrentTemperatureUnitContext";
 
 const WeatherCard = ({ weather }) => {
-  if (!weather || typeof weather.temperature === "undefined") {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+
+  if (
+    !weather ||
+    !weather.temperature ||
+    typeof weather.temperature[currentTemperatureUnit] === "undefined"
+  ) {
     return null;
   }
-  const temperature = weather.temperature;
+
+  const temperature = weather.temperature[currentTemperatureUnit];
+
   return (
     <div className="weather-card">
-      <p className="weather-card__temperature">{temperature}°F</p>
+      <p className="weather-card__temperature">
+        {temperature}°{currentTemperatureUnit}
+      </p>
     </div>
   );
 };
