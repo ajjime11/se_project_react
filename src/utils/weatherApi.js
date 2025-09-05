@@ -16,6 +16,9 @@ export function parseWeatherData(data) {
   parsedData.temperature = {};
   parsedData.temperature.F = Math.round(data.main.temp);
   parsedData.temperature.C = Math.round(((data.main.temp - 32) * 5) / 9);
+  parsedData.dt = data.dt;
+  parsedData.sys = data.sys;
+  parsedData.weather = data.weather;
   return parsedData;
 }
 
