@@ -35,9 +35,9 @@
 }
 
 .toggle-switch__checkbox:checked + .toggle-switch__circle {
-  right: -2px;
-  left: unset;
-  transform: translateX(0);
+  /* right: -2px;
+  left: unset; */
+  transform: translateX(100%);
 }
 
 .toggle-switch:hover .toggle-switch__value_left {
@@ -49,7 +49,7 @@
 }
 
 .toggle-switch__checkbox:checked:hover + .toggle-switch__circle {
-  transform: translateX(-2px);
+  /*transform: translateX(-2px);*/
 }
 
 .toggle-switch__value {
