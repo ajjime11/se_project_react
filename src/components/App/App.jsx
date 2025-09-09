@@ -10,6 +10,8 @@ import ItemModal from "../ItemModal/ItemModal";
 import { defaultClothingItems } from "../../utils/defaultClothingItems";
 import { getWeatherData, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { Routes, Route } from "react-router-dom";
+import Profile from "../Profile/Profile";
 
 function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
@@ -55,11 +57,22 @@ function App() {
     >
       <div className="app">
         <Header onAddClick={handleOpenModal} city={weather.city} />
-        <Main
-          clothingItems={clothingItems}
-          onCardClick={handleOpenItemModal}
-          weather={weather}
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main
+                clothingItems={clothingItems}
+                onCardClick={handleOpenItemModal}
+                weather={weather}
+              />
+            }
+          ></Route>
+          <Route
+            path="/profile"
+            element={<Profile clothingItems={clothingItems} />}
+          ></Route>
+        </Routes>
         <Footer />
         <ModalWithForm
           name="add-garment"

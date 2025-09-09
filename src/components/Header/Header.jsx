@@ -4,6 +4,7 @@ import avatar from "../../assets/avatar.png";
 import "./Header.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { Link } from "react-router-dom";
 
 const Header = ({ onAddClick, city }) => {
   const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
@@ -17,6 +18,7 @@ const Header = ({ onAddClick, city }) => {
 
   return (
     <header className="header">
+      {/* TODO - link to home page (aka "/" */}
       <div className="header__side">
         <img src={logo} alt="" className="header__logo" />
         <p className="header__place">
@@ -32,12 +34,14 @@ const Header = ({ onAddClick, city }) => {
           <button onClick={onAddClick} className="header__add-clothes-btn">
             + Add clothes
           </button>
-          <p className="header__username">Terrence Tegegne</p>
-          <img
-            src={avatar}
-            alt="Terrence Tegegne's avatar"
-            className="header__avatar"
-          />
+          <Link className="header__link" to="/profile">
+            <p className="header__username">Terrence Tegegne</p>
+            <img
+              src={avatar}
+              alt="Terrence Tegegne's avatar"
+              className="header__avatar"
+            />
+          </Link>
         </div>
       </div>
     </header>
