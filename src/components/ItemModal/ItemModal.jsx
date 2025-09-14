@@ -1,6 +1,6 @@
 import "./ItemModal.css";
 
-const ItemModal = ({ card, isOpen, onClose }) => {
+const ItemModal = ({ card, isOpen, onClose, onDeleteClick }) => {
   const handleOverlayClick = (event) => {
     if (event.target === event.currentTarget) {
       onClose();
@@ -22,6 +22,7 @@ const ItemModal = ({ card, isOpen, onClose }) => {
         <div className="modal__footer">
           <p className="modal__text modal__title">{card.name}</p>
           <p className="modal__text">Weather: {card.weather}</p>
+          <button onClick={onDeleteClick}>Delete item</button>
         </div>
       </div>
     </div>

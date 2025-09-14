@@ -1,31 +1,34 @@
-import { useContext } from "react";
 import WeatherCard from "./WeatherCard/WeatherCard";
 import ItemCard from "./ItemCard/ItemCard";
-import "./Main.css";
 import { getWeatherCondition } from "../../utils/weatherApi";
+import "./Main.css";
+import { useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
-const Main = ({ onCardClick, clothingItems, weather }) => {
+const Main = ({ clothingItems, onCardClick, weather }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  const weatherType = getWeatherCondition(weather.temperature.F);
-  const filteredItems = clothingItems.filter(
-    (item) => item.weather === weatherType
-  );
+  const temp = weather.temperature[currentTemperatureUnit];
+  const weatherType = getWeatherCondition(temp);
+
+  const filteredClothingItems = clothingItems.filter((item) => {
+    return item.weather.toLowerCase() === weatherType.toLowerCase();
+  });
 
   return (
     <main className="main">
       <WeatherCard weather={weather} />
-      {weather && weather.temperature && (
-        <div className="main__text">
-          Today is {weather.temperature[currentTemperatureUnit]}°
-          {currentTemperatureUnit} / You may want to wear:
+      <section className="main__clothing-section">
+        <div className="main__clothing-section-info">
+          <div className="main__clothing-section-title">
+            Today is {temp}°{currentTemperatureUnit} / You may want to wear:
+          </div>
         </div>
-      )}
-      <div className="main__items">
-        {filteredItems.map((item) => (
-          <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
-        ))}
-      </div>
+        <div className="main__items">
+          {filteredClothingItems.map((item) => (
+            <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 };

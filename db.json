@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "name": "Cap",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png",
+      "_id": "65b1a37c449c258d4a36f521"
+    },
+    {
+      "name": "Hoodie",
+      "weather": "warm",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png",
+      "_id": "65b1a37c449c258d4a36f522"
+    },
+    {
+      "name": "Jacket",
+      "weather": "cold",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Jacket.png",
+      "_id": "65b1a37c449c258d4a36f523"
+    },
+    {
+      "name": "Sneakers",
+      "weather": "cold",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sneakers.png",
+      "_id": "65b1a37c449c258d4a36f524"
+    },
+    {
+      "name": "T-Shirt",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png",
+      "_id": "65b1a37c449c258d4a36f525"
+    },
+    {
+      "name": "Coat",
+      "weather": "cold",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png",
+      "_id": "65b1a37c449c258d4a36f526"
+    }
+  ]
+}

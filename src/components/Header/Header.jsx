@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import logo from "../../assets/wtwr.png";
 import avatar from "../../assets/avatar.png";
 import "./Header.css";
@@ -17,9 +18,10 @@ const Header = ({ onAddClick, city }) => {
 
   return (
     <header className="header">
-      {/* TODO - link to home page (aka "/" */}
       <div className="header__side">
-        <img src={logo} alt="" className="header__logo" />
+        <Link to="/">
+          <img src={logo} alt="" className="header__logo" />
+        </Link>
         <p className="header__place">
           <time className="header__datetime" dateTime={now}>
             {dateStr},
