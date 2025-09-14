@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./WeatherCard.css";
 import { CurrentTemperatureUnitContext } from "../../../contexts/CurrentTemperatureUnitContext";
 import { weatherConditions, defaultImages } from "../../../utils/constants";

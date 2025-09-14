@@ -1,7 +1,5 @@
-import React from "react";
 import "../ItemModal/ItemModal.css";
 import "./ModalWithForm.css";
-import x from "../../assets/x.png";
 
 const ModalWithForm = ({
   children,

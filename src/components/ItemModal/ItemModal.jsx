@@ -1,4 +1,3 @@
-import React from "react";
 import "./ItemModal.css";
 
 const ItemModal = ({ card, isOpen, onClose }) => {

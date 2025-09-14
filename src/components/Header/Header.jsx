@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import logo from "../../assets/wtwr.png";
 import avatar from "../../assets/avatar.png";
 import "./Header.css";
