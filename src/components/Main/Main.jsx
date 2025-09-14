@@ -8,7 +8,11 @@ import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 const Main = ({ clothingItems, onCardClick, weather }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weather.temperature[currentTemperatureUnit];
-  const weatherType = getWeatherCondition(temp);
+
+  const fahrenheitTemp =
+    currentTemperatureUnit === "C" ? (temp * 9) / 5 + 32 : temp;
+
+  const weatherType = getWeatherCondition(fahrenheitTemp);
 
   const filteredClothingItems = clothingItems.filter((item) => {
     return item.weather.toLowerCase() === weatherType.toLowerCase();

@@ -66,3 +66,7 @@
 .toggle-switch__checkbox:checked ~ .toggle-switch__value_right {
   color: white;
 }
+
+.toggle-switch:hover {
+  border-color: #000;
+}

@@ -18,11 +18,15 @@ const ItemModal = ({ card, isOpen, onClose, onDeleteClick }) => {
           type="button"
           onClick={onClose}
         ></button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
-          <p className="modal__text modal__title">{card.name}</p>
-          <p className="modal__text">Weather: {card.weather}</p>
-          <button onClick={onDeleteClick}>Delete item</button>
+          <div className="modal__item-info">
+            <h3 className="modal__item-name">{card.name}</h3>
+            <p className="modal__item-weather">Weather: {card.weather}</p>
+          </div>
+          <button className="modal__delete-button" onClick={onDeleteClick}>
+            Delete item
+          </button>
         </div>
       </div>
     </div>

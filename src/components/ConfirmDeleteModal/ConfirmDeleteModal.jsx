@@ -1,4 +1,5 @@
-import "../ItemModal/ItemModal.css";
+import React from "react";
+import "./ConfirmDeleteModal.css";
 
 const ConfirmDeleteModal = ({ isOpen, onClose, onDelete }) => {
   const handleOverlayClick = (event) => {
@@ -12,21 +13,33 @@ const ConfirmDeleteModal = ({ isOpen, onClose, onDelete }) => {
       className={`modal ${isOpen ? "modal_is-opened" : ""}`}
       onClick={handleOverlayClick}
     >
-      <div className="modal__container modal__container_type_confirm">
+      <div className="modal__content modal__content-confirm">
         <button
           className="modal__close-button"
           type="button"
           onClick={onClose}
         ></button>
-        <h2 className="modal__confirm-title">
-          Are you sure you want to delete this item?
-        </h2>
-        <p className="modal__confirm-text">This action is irreversible.</p>
+        <div className="modal__confirm-text-container">
+          <p className="modal__confirm-text">
+            Are you sure you want to delete this item?
+          </p>
+          <p className="modal__confirm-text modal__confirm-text">
+            This action is irreversible.
+          </p>
+        </div>
         <div className="modal__confirm-buttons">
-          <button className="modal__confirm-button_delete" onClick={onDelete}>
+          <button
+            className="modal__confirm-button modal__confirm-button_delete"
+            type="button"
+            onClick={onDelete}
+          >
             Yes, delete item
           </button>
-          <button className="modal__confirm-button_cancel" onClick={onClose}>
+          <button
+            className="modal__confirm-button modal__confirm-button_cancel"
+            type="button"
+            onClick={onClose}
+          >
             Cancel
           </button>
         </div>
