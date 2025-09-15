@@ -1,7 +1,6 @@
 import "./ItemCard.css";
 
 const ItemCard = ({ item, onCardClick }) => {
-  // Ensure all items have _id for consistency
   const itemWithId = item._id ? item : { ...item, _id: item.id };
   return (
     <div className="item-card" onClick={() => onCardClick(itemWithId)}>

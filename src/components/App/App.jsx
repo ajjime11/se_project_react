@@ -62,7 +62,7 @@ function App() {
         console.log("deleteItem API response:", res);
         setClothingItems((items) => {
           const filtered = items.filter(
-            (item) => item._id !== selectedCard._id
+            (item) => String(item._id) !== String(selectedCard._id)
           );
           console.log("Updated clothingItems after delete:", filtered);
           return filtered;
@@ -86,7 +86,16 @@ function App() {
   useEffect(() => {
     getItems()
       .then((items) => {
-        setClothingItems(items);
+        const sorted = [...items].sort((a, b) => {
+          const idA = (a._id || a.id || 0).toString();
+          const idB = (b._id || b.id || 0).toString();
+
+          return idB.localeCompare(idA, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          });
+        });
+        setClothingItems(sorted);
       })
       .catch((error) => console.error("Error fetching items:", error));
   }, []);
