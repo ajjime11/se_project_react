@@ -28,9 +28,13 @@ const Main = ({ clothingItems, onCardClick, weather }) => {
           </div>
         </div>
         <div className="main__items">
-          {filteredClothingItems.map((item) => (
-            <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
-          ))}
+          {filteredClothingItems.map((item) => {
+            const key = item._id || item.id;
+            const itemWithId = item._id ? item : { ...item, _id: item.id };
+            return (
+              <ItemCard key={key} item={itemWithId} onCardClick={onCardClick} />
+            );
+          })}
         </div>
       </section>
     </main>

@@ -1,4 +1,3 @@
-import React from "react";
 import "./ConfirmDeleteModal.css";
 
 const ConfirmDeleteModal = ({ isOpen, onClose, onDelete }) => {

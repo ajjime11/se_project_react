@@ -52,11 +52,21 @@ function App() {
   };
 
   const handleCardDelete = () => {
+    console.log("handleCardDelete called. selectedCard:", selectedCard);
+    if (!selectedCard._id) {
+      console.error("No _id found on selectedCard. Aborting delete.");
+      return;
+    }
     deleteItem(selectedCard._id)
-      .then(() => {
-        setClothingItems((items) =>
-          items.filter((item) => item._id !== selectedCard._id)
-        );
+      .then((res) => {
+        console.log("deleteItem API response:", res);
+        setClothingItems((items) => {
+          const filtered = items.filter(
+            (item) => item._id !== selectedCard._id
+          );
+          console.log("Updated clothingItems after delete:", filtered);
+          return filtered;
+        });
         handleCloseModal();
         setSelectedCard({});
       })

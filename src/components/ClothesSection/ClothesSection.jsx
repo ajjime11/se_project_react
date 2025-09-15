@@ -11,9 +11,13 @@ const ClothesSection = ({ clothingItems, onCardClick, onAddClick }) => {
         </button>
       </div>
       <div className="clothes-section__items">
-        {clothingItems.map((item) => (
-          <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
-        ))}
+        {clothingItems.map((item) => {
+          const key = item._id || item.id;
+          const itemWithId = item._id ? item : { ...item, _id: item.id };
+          return (
+            <ItemCard key={key} item={itemWithId} onCardClick={onCardClick} />
+          );
+        })}
       </div>
     </section>
   );
