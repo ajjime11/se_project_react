@@ -62,7 +62,9 @@ function App() {
         console.log("deleteItem API response:", res);
         setClothingItems((items) => {
           const filtered = items.filter(
-            (item) => String(item._id) !== String(selectedCard._id)
+            (item) =>
+              String(item._id) !== String(selectedCard._id) &&
+              String(item.id) !== String(selectedCard._id)
           );
           console.log("Updated clothingItems after delete:", filtered);
           return filtered;
