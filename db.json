@@ -118,6 +118,18 @@
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
       "id": "b442"
+    },
+    {
+      "id": "30b0",
+      "name": "Red skirt",
+      "imageUrl": "https://images.unsplash.com/photo-1646054224885-f978f5798312?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "weather": "warm"
+    },
+    {
+      "id": "0e67",
+      "name": "Tank top",
+      "imageUrl": "https://matadormeggings.com/cdn/shop/products/BlackTank1.jpg?v=1655727816&width=1024",
+      "weather": "hot"
     }
   ]
 }
