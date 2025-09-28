@@ -1,5 +1,7 @@
 Project 4: React
 
+Link to backend repository: https://github.com/ajjime11/se_project_express
+
 Overview
 Welcome to my first project using React! This is a major milestone in my journey through the TripleTen Software Engineering bootcamp. This project represents a significant step forward in my skills, as I'm moving beyond static web pages to build a dynamic, component-based application. This foundational experience is a key piece of my preparation for a career in the tech industry.
 
