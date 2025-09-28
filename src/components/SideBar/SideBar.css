@@ -1,22 +1,63 @@
-/* TODO - finish styling the sidebar elements */
-
 .sidebar {
   min-width: 229px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.sidebar__row {
+.sidebar__user-info {
   display: flex;
-  flex-direction: row-reverse;
-  gap: 16px;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 }
 
 .sidebar__avatar {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   object-fit: cover;
 }
 
+.sidebar__avatar-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
 .sidebar__username {
   margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.sidebar__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar__button {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar__button:hover {
+  opacity: 0.6;
 }

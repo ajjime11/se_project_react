@@ -1,7 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../../hooks/useForm";
 
-const RegisterModal = ({ isOpen, onClose, onRegister }) => {
+const RegisterModal = ({ isOpen, onClose, onRegister, onLoginClick }) => {
   const { values, handleChange } = useForm({
     name: "",
     avatar: "",
@@ -21,6 +21,8 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText="Next"
+      altButtonText="or Log in"
+      onAltClick={onLoginClick}
     >
       <label className="modal__label">
         Email*
@@ -62,7 +64,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
         Avatar URL*
         <input
           className="modal__input"
-          type="url"
+          type="text"
           name="avatar"
           placeholder="Avatar URL"
           value={values.avatar}

@@ -76,3 +76,25 @@ export const deleteItem = (id) => {
     },
   }).then(checkResponse);
 };
+
+export const likeItem = (id) => {
+  const token = localStorage.getItem("jwt");
+  return fetch(`${getBaseUrl()}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+export const dislikeItem = (id) => {
+  const token = localStorage.getItem("jwt");
+  return fetch(`${getBaseUrl()}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};

@@ -1,9 +1,25 @@
+import { useContext } from "react";
 import "./ItemModal.css";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const ItemModal = ({ card, isOpen, onClose, onDeleteClick }) => {
+const ItemModal = ({ card, isOpen, onClose, onDeleteClick, onCardLike }) => {
+  const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
+
+  const isOwn = card.owner === currentUser?._id;
+
+  const isLiked = card.likes?.some((id) => id === currentUser?._id) || false;
+
   const handleOverlayClick = (event) => {
     if (event.target === event.currentTarget) {
       onClose();
+    }
+  };
+
+  const handleLikeClick = () => {
+    if (isLoggedIn) {
+      onCardLike(card._id, isLiked);
+    } else {
+      console.log("User must be logged in to like items.");
     }
   };
 
@@ -24,9 +40,27 @@ const ItemModal = ({ card, isOpen, onClose, onDeleteClick }) => {
             <h3 className="modal__item-name">{card.name}</h3>
             <p className="modal__item-weather">Weather: {card.weather}</p>
           </div>
-          <button className="modal__delete-button" onClick={onDeleteClick}>
-            Delete item
-          </button>
+          <div className="modal__actions">
+            {isLoggedIn && (
+              <button
+                type="button"
+                className={`modal__like-button ${
+                  isLiked ? "modal__like-button_active" : ""
+                }`}
+                onClick={handleLikeClick}
+                aria-label={isLiked ? "Unlike item" : "Like item"}
+              />
+            )}
+            {isOwn ? (
+              <button
+                className="modal__delete-button"
+                onClick={onDeleteClick}
+                type="button"
+              >
+                Delete item
+              </button>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

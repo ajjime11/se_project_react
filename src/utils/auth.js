@@ -29,11 +29,12 @@ export const login = (data) => {
 };
 
 export const checkToken = (token) => {
+  const jwt = token || localStorage.getItem("jwt");
   return fetch(`${getBaseUrl()}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      authorization: `Bearer ${jwt}`,
     },
   }).then(checkResponse);
 };

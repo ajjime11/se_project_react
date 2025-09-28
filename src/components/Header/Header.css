@@ -55,6 +55,7 @@
 .header__side {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .header__link {
@@ -62,4 +63,23 @@
   align-items: center;
   text-decoration: none;
   color: #000;
+}
+
+/* New styles for login and signup buttons */
+.header__register-btn,
+.header__login-btn {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header__register-btn:hover,
+.header__login-btn:hover {
+  opacity: 0.6;
 }
