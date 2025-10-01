@@ -32,7 +32,12 @@ const Main = ({ clothingItems, onCardClick, weather }) => {
             const key = item._id || item.id;
             const itemWithId = item._id ? item : { ...item, _id: item.id };
             return (
-              <ItemCard key={key} item={itemWithId} onCardClick={onCardClick} />
+              <ItemCard
+                key={key}
+                item={itemWithId}
+                onCardClick={onCardClick}
+                onCardLike={weather.onCardLike}
+              />
             );
           })}
         </div>

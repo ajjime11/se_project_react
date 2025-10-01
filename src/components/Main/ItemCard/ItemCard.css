@@ -40,3 +40,18 @@
 .item-card:hover {
   filter: brightness(1.2);
 }
+
+.item-card__like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background-image: url("../../../../assets/like-inactive.svg");
+  background-size: cover;
+  transition: background-image 0.2s;
+}
+
+.item-card__like-button_active {
+  background-image: url("../../../../assets/like-active.svg");
+}

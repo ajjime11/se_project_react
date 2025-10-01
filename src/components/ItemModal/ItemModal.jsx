@@ -41,16 +41,7 @@ const ItemModal = ({ card, isOpen, onClose, onDeleteClick, onCardLike }) => {
             <p className="modal__item-weather">Weather: {card.weather}</p>
           </div>
           <div className="modal__actions">
-            {isLoggedIn && (
-              <button
-                type="button"
-                className={`modal__like-button ${
-                  isLiked ? "modal__like-button_active" : ""
-                }`}
-                onClick={handleLikeClick}
-                aria-label={isLiked ? "Unlike item" : "Like item"}
-              />
-            )}
+            {/* Like button removed to match Figma design */}
             {isOwn ? (
               <button
                 className="modal__delete-button"

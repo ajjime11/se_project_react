@@ -5,6 +5,10 @@
   justify-content: space-between;
 }
 
+.header__info-group:has(.header__login-btn) {
+  margin-bottom: 32px;
+}
+
 .header__logo {
   margin-right: 24px;
   height: 24px;
