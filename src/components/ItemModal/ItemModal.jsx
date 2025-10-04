@@ -15,6 +15,7 @@ const ItemModal = ({ card, isOpen, onClose, onDeleteClick, onCardLike }) => {
     }
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleLikeClick = () => {
     if (isLoggedIn) {
       onCardLike(card._id, isLiked);

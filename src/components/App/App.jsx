@@ -9,6 +9,7 @@ import ItemModal from "../ItemModal/ItemModal";
 import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import { getWeatherData, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
@@ -19,6 +20,7 @@ import {
   deleteItem,
   likeItem,
   dislikeItem,
+  updateUserProfile,
 } from "../../utils/api";
 import { register, login, checkToken } from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
@@ -103,15 +105,8 @@ function App() {
   };
 
   const handleRegister = ({ name, avatar, email, password }) => {
-    console.log("handleRegister called with:", {
-      name,
-      avatar,
-      email,
-      password,
-    });
     register({ name, avatar, email, password })
       .then((res) => {
-        console.log("Registration successful:", res);
         handleLogin({ email, password });
       })
       .catch((err) => console.error("Registration error:", err));
@@ -120,7 +115,6 @@ function App() {
   const handleLogin = ({ email, password }) => {
     login({ email, password })
       .then((res) => {
-        console.log("Login token:", res.token);
         localStorage.setItem("jwt", res.token);
         return checkToken(res.token).then((userRes) => {
           setCurrentUser(userRes.data);
@@ -136,6 +130,15 @@ function App() {
     setIsLoggedIn(false);
     setCurrentUser(null);
     navigate("/");
+  };
+
+  const handleUpdateUser = (data) => {
+    updateUserProfile(data)
+      .then((res) => {
+        setCurrentUser(res.data);
+        handleCloseModal();
+      })
+      .catch((err) => console.error("Update user error:", err));
   };
 
   useEffect(() => {
@@ -214,6 +217,7 @@ function App() {
                     onAddClick={() => handleOpenModal("add-garment")}
                     onCardClick={handleOpenItemModal}
                     onSignOut={handleSignOut}
+                    onEditProfileClick={() => handleOpenModal("edit-profile")}
                   />
                 </ProtectedRoute>
               }
@@ -236,6 +240,11 @@ function App() {
             onClose={handleCloseModal}
             onLogin={handleLogin}
             onSignUpClick={handleOpenRegisterModal}
+          />
+          <EditProfileModal
+            isOpen={activeModal === "edit-profile"}
+            onClose={handleCloseModal}
+            onUpdateUser={handleUpdateUser}
           />
           <ItemModal
             isOpen={activeModal === "preview"}

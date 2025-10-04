@@ -98,3 +98,18 @@ export const dislikeItem = (id) => {
     },
   }).then(checkResponse);
 };
+
+export const updateUserProfile = (data) => {
+  const token = localStorage.getItem("jwt");
+  return fetch(`${getBaseUrl()}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      name: data.name,
+      avatar: data.avatar,
+    }),
+  }).then(checkResponse);
+};

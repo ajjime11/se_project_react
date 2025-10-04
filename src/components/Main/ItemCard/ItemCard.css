@@ -13,21 +13,10 @@
   cursor: pointer;
 }
 
-.item-card__name {
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 20px;
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #000000;
-  z-index: 1;
-  background-color: #fff;
-  padding: 8px 12px;
-  border-radius: 4px;
+.item-card__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-card__image {
@@ -41,17 +30,42 @@
   filter: brightness(1.2);
 }
 
+.item-card__header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.item-card__name {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  background-color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
 .item-card__like-button {
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
-  width: 32px;
-  height: 32px;
-  background-image: url("../../../../assets/like-inactive.svg");
-  background-size: cover;
-  transition: background-image 0.2s;
+  padding: 0;
+  width: 18px;
+  height: 16px;
+  margin-left: 10px;
+  background-image: url("../../../assets/like-inactive.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .item-card__like-button_active {
-  background-image: url("../../../../assets/like-active.svg");
+  background-image: url("../../../assets/like_active.png");
 }

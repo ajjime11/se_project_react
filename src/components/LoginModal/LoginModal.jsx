@@ -26,32 +26,32 @@ const LoginModal = ({ isOpen, onClose, onLogin, onSignUpClick }) => {
       <div className="modal__form-field">
         <label className="modal__label" htmlFor="login-email">
           Email*
-          <input
-            id="login-email"
-            className="modal__input"
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={values.email}
-            onChange={handleChange}
-            required
-          />
         </label>
+        <input
+          id="login-email"
+          className="modal__input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={values.email}
+          onChange={handleChange}
+          required
+        />
       </div>
       <div className="modal__form-field">
         <label className="modal__label" htmlFor="login-password">
           Password*
-          <input
-            id="login-password"
-            className="modal__input"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={values.password}
-            onChange={handleChange}
-            required
-          />
         </label>
+        <input
+          id="login-password"
+          className="modal__input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={values.password}
+          onChange={handleChange}
+          required
+        />
       </div>
     </ModalWithForm>
   );

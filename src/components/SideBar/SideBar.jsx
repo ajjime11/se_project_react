@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const SideBar = ({ handleSignOut }) => {
+const SideBar = ({ onSignOut, onEditProfileClick }) => {
   const { currentUser } = useContext(CurrentUserContext);
 
   const getAvatarContent = () => {
@@ -36,15 +36,11 @@ const SideBar = ({ handleSignOut }) => {
         <button
           className="sidebar__button"
           type="button"
-          onClick={() => console.log("Open change profile modal")}
+          onClick={onEditProfileClick}
         >
           Change profile data
         </button>
-        <button
-          className="sidebar__button"
-          type="button"
-          onClick={handleSignOut}
-        >
+        <button className="sidebar__button" type="button" onClick={onSignOut}>
           Log out
         </button>
       </div>
