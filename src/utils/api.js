@@ -1,6 +1,7 @@
-export const getBaseUrl = () => {
-  return "http://localhost:3001";
-};
+const baseUrl =
+  import.meta.env.MODE === "production"
+    ? "https://api.ajjime11-what-to-wear.crabdance.com"
+    : "http://localhost:3001";
 
 export const checkResponse = async (res) => {
   const contentType = res.headers.get("content-type") || "";
@@ -46,7 +47,7 @@ export const checkResponse = async (res) => {
 
 export const getInitialCards = () => {
   const token = localStorage.getItem("jwt");
-  return fetch(`${getBaseUrl()}/items`, {
+  return fetch(`${baseUrl}/items`, {
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
@@ -56,7 +57,7 @@ export const getInitialCards = () => {
 
 export const addItem = (item) => {
   const token = localStorage.getItem("jwt");
-  return fetch(`${getBaseUrl()}/items`, {
+  return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -68,7 +69,7 @@ export const addItem = (item) => {
 
 export const deleteItem = (id) => {
   const token = localStorage.getItem("jwt");
-  return fetch(`${getBaseUrl()}/items/${id}`, {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -79,7 +80,7 @@ export const deleteItem = (id) => {
 
 export const likeItem = (id) => {
   const token = localStorage.getItem("jwt");
-  return fetch(`${getBaseUrl()}/items/${id}/likes`, {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -90,7 +91,7 @@ export const likeItem = (id) => {
 
 export const dislikeItem = (id) => {
   const token = localStorage.getItem("jwt");
-  return fetch(`${getBaseUrl()}/items/${id}/likes`, {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -101,7 +102,7 @@ export const dislikeItem = (id) => {
 
 export const updateUserProfile = (data) => {
   const token = localStorage.getItem("jwt");
-  return fetch(`${getBaseUrl()}/users/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
