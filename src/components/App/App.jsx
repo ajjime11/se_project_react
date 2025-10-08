@@ -106,6 +106,7 @@ function App() {
 
   const handleRegister = ({ name, avatar, email, password }) => {
     register({ name, avatar, email, password })
+    // eslint-disable-next-line no-unused-vars
       .then((res) => {
         handleLogin({ email, password });
       })
