@@ -1,7 +1,11 @@
 const baseUrl =
-  import.meta.env.MODE === "production"
+  process.env.NODE_ENV === "production"
     ? "https://api.ajjime11-what-to-wear.crabdance.com"
     : "http://localhost:3001";
+
+const getBaseUrl = () => {
+  return baseUrl;
+};
 
 export const checkResponse = async (res) => {
   const contentType = res.headers.get("content-type") || "";
@@ -114,3 +118,5 @@ export const updateUserProfile = (data) => {
     }),
   }).then(checkResponse);
 };
+
+export { getBaseUrl };
