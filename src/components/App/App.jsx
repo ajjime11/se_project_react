@@ -106,7 +106,7 @@ function App() {
 
   const handleRegister = ({ name, avatar, email, password }) => {
     register({ name, avatar, email, password })
-    // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
       .then((res) => {
         handleLogin({ email, password });
       })
@@ -217,6 +217,7 @@ function App() {
                     )}
                     onAddClick={() => handleOpenModal("add-garment")}
                     onCardClick={handleOpenItemModal}
+                    onCardLike={handleCardLike}
                     onSignOut={handleSignOut}
                     onEditProfileClick={() => handleOpenModal("edit-profile")}
                   />

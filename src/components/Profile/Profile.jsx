@@ -6,6 +6,7 @@ const Profile = ({
   clothingItems,
   onAddClick,
   onCardClick,
+  onCardLike,
   onSignOut,
   onEditProfileClick,
 }) => {
@@ -16,6 +17,7 @@ const Profile = ({
         clothingItems={clothingItems}
         onAddClick={onAddClick}
         onCardClick={onCardClick}
+        onCardLike={onCardLike}
       />
     </main>
   );
