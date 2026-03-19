@@ -1,7 +1,6 @@
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.ajjime11-what-to-wear.crabdance.com"
-    : "http://localhost:3001";
+const baseUrl = import.meta.env.PROD
+  ? "https://se-project-express-vfq4.onrender.com"
+  : "http://localhost:3001";
 
 const getBaseUrl = () => {
   return baseUrl;
@@ -18,8 +17,8 @@ export const checkResponse = async (res) => {
       } catch (e) {
         return Promise.reject(
           new Error(
-            `Invalid JSON response from ${res.url}: ${text.slice(0, 200)}`
-          )
+            `Invalid JSON response from ${res.url}: ${text.slice(0, 200)}`,
+          ),
         );
       }
     }
@@ -28,8 +27,8 @@ export const checkResponse = async (res) => {
       new Error(
         `Expected JSON but received '${contentType || "unknown"}' from ${
           res.url
-        }: ${text.slice(0, 200)}`
-      )
+        }: ${text.slice(0, 200)}`,
+      ),
     );
   }
 
@@ -39,13 +38,13 @@ export const checkResponse = async (res) => {
       return Promise.reject(data);
     } catch (e) {
       return Promise.reject(
-        new Error(`Error ${res.status} from ${res.url}: ${text}`)
+        new Error(`Error ${res.status} from ${res.url}: ${text}`),
       );
     }
   }
 
   return Promise.reject(
-    new Error(`Error ${res.status} from ${res.url}: ${text}`)
+    new Error(`Error ${res.status} from ${res.url}: ${text}`),
   );
 };
 
