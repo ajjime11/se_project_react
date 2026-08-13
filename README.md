@@ -35,7 +35,7 @@ This frontend is deployed on Vercel and communicates with a Node/Express backend
 
 ## Live Deployment
 Frontend (Vercel):  
-se-project-react-blue.vercel.app/
+https://se-project-react-blue.vercel.app/
 
 Backend (Render):  
 https://se-project-express-vfq4.onrender.com
