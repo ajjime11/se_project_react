@@ -42,6 +42,11 @@ const Main = ({ clothingItems, onCardClick, weather, onCardLike }) => {
           })}
         </div>
       </section>
+      <div className="main__notice" role="status" aria-live="polite">
+        Note: The backend API is hosted on Render's free tier. Initial requests
+        may take 30–60 seconds to spin up due to instance spin-down after
+        periods of inactivity. Once awake, performance returns to normal.
+      </div>
     </main>
   );
 };
